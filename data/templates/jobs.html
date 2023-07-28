@@ -1,0 +1,48 @@
+{% extends 'theme.html' %}
+            {% block content %}
+<!-- end of navbar navigation -->
+            <div class="content">
+                <div class="container">
+                    <div class="auth-content">
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <div class="mb-4">
+                                    <img class="brand" src="assets/img/bootstraper-logo.png" alt="bootstraper logo">
+                                </div>
+                                <h6 class="mb-4 text-muted">Create Job Details</h6>
+                                <form method="post">
+                                    {% csrf_token %}
+                                    <div class="mb-3 text-start">
+                                        <label for="name" class="form-label">Job ID</label>
+                                        <input type="text" class="form-control" placeholder="Enter Job Id" name="job_id" required>
+                                    </div>
+                                    <div class="mb-3 text-start">
+                                        <label for="name" class="form-label">Job Title</label>
+                                        <input type="text" class="form-control" placeholder="Enter Job Title" name="job_title" required>
+                                    </div>
+
+                                    <div class="mb-3 text-start">
+                                        <label for="name" class="form-label">Job Description</label>
+                                        <textarea class="form-control" placeholder="Enter Job Descrition" name="job_desc"></textarea>
+                                    </div>
+                                    <div class="mb-3 text-start">
+                                        <label for="name" class="form-label">Start Date</label>
+                                        <input type="date" class="form-control" placeholder="Select Date" name="job_sdate">
+                                    </div>
+                                    <div class="mb-3 text-start">
+                                        <label for="email" class="form-label">End Date</label>
+                                        <input type="date" class="form-control" placeholder="Select Date" name="job_edate">
+                                    </div>
+                                    <div class="mb-3 text-start">
+                                        <label for="password" class="form-label">Status</label>
+                                        <input type="text" class="form-control" placeholder="Status" name="job_status">
+                                    </div>
+                                    <button class="btn btn-primary shadow-2 mb-4">Register</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    {% endblock %}
+   

@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <style>
+            * {
+                font-size: 15px;
+            }
+
+            table {
+                table-layout: fixed;
+                width: 100%;
+                border: 1px solid black;
+            }
+
+            table th {
+                text-align: left;
+                padding: 3px;
+                padding-bottom: 0;
+            }
+
+            table td {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                padding: 3px;
+                padding-bottom: 0;
+            }
+        </style>
+    </head>
+        <h1>Company Name:</h1>
+        <p><b>Report Date : {{date1}} to {{date2}}<b></p>
+    <body>
+        <table>
+            <tr>
+                <th> Name </th>
+                <th> Job </th>
+                <th>  Date</th>
+                <th>  Staritng Time</th>
+                <th>  Ending Time</th>
+                <th> Total Hour</th>
+                <th>  OverTime</th>
+            </tr>
+            {% for data in record %}
+            <tr>
+                <td style="width: 20%; text-align: left;"> {{data.s_name}} </td>
+                <td style="width: 20%;"> {{data.s_jobs}} </td>
+                <td style="width: 20%;"> {{data.s_date}} </td>
+                <td style="width: 15%;"> {{data.s_start}} </td>
+                <td style="width: 15%;"> {{data.s_end}} </td>
+                <td style="width: 10%;"> {{ data.workhour|floatformat:2 }} </td>
+                <td style="width: 15%;"> {{data.overtime}} </td>
+            </tr>
+            {%endfor%}
+            <tr>
+                <td colspan="3">Working Hours :{{ workhour|floatformat:2 }}</td>
+                <td colspan="4">Over Time :{{overtime}}</td>
+            </tr>
+        </table>
+    </body>
+</html>

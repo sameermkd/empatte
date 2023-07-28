@@ -1,0 +1,49 @@
+{% extends 'theme.html' %}
+{% load static %}
+            {% block content %}
+<!-- end of navbar navigation -->
+            <div class="content">
+                <div class="container">
+                    <div class="auth-content">
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <div class="mb-4">
+                                    <img class="brand" src="assets/img/bootstraper-logo.png" alt="bootstraper logo">
+                                </div>
+                                <h6 class="mb-4 text-muted">Create Employee Details</h6>
+                                <form method="POST" enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                    <div class="mb-3 text-start">
+                                        <label for="name" class="form-label">Emp ID</label>
+                                        <input type="text" class="form-control" placeholder="Enter Employee Id" name="emp_id" required >
+                                    </div>
+                                    <div class="mb-3 text-start">
+                                        <label for="name" class="form-label">First Name</label>
+                                        <input type="text" class="form-control" placeholder="Enter First Name" required name="emp_fname">
+                                    </div>
+
+                                    <div class="mb-3 text-start">
+                                        <label for="name" class="form-label">Last Name</label>
+                                        <input type="text" class="form-control" placeholder="Enter Last Name" name="emp_lname">
+                                    </div>
+                                    <div class="mb-3 text-start">
+                                        <label for="name" class="form-label">Phone Number</label>
+                                        <input type="text" class="form-control" placeholder="Enter Phone" name="emp_phone">
+                                    </div>
+                                    <div class="mb-3 text-start">
+                                        <label for="email" class="form-label">Email adress</label>
+                                        <input type="email" class="form-control" placeholder="Enter Email" name="emp_email">
+                                    </div>
+                                    <div class="mb-3 text-start">
+                                        <label for="password" class="form-label">Image</label>
+                                        <input type="file" class="form-control" placeholder="Select Image" name="emp_image">
+                                    </div>
+                                    <button class="btn btn-primary shadow-2 mb-4">Register</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    {% endblock %}
+   

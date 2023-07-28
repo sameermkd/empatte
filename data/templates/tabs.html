@@ -1,0 +1,62 @@
+<div class="content">
+    <div class="container">
+        <div class="page-title">
+            <h3>Tables</h3>
+        </div>
+            <div class="col-md-12 col-lg-12">
+                <div class="card">
+                    <div class="card-header">Employee Details</div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Date</th>
+                                        <th>Jobs</th>
+                                        <th>Name</th>
+                                        <th>Starting Time</th>
+                                        <th>Ending Time</th>
+                                        <th>Working Hour</th>
+                                        <th>Over Time</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for a in problems %}
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>{{a.s_date}}</td>
+                                        <td>{{a.s_jobs}}</td>
+                                        <td>{{a.s_name}}</td>
+                                        <td>{{a.s_start}}</td>
+                                        <td>{{a.s_end}}</td>
+                                        <td>{{a.workhour}}</td>
+                                        <td>{{a.overtime}}</td>
+                                    </tr>
+                                    <script>
+                                        ot=ot+parseInt('{{a.overtime}}')
+                                        wh=wh+parseInt('{{a.workhour}}')
+                                    </script>
+                        
+                                    {% endfor %}
+                                    <tr>
+                                        <td colspan="6">Total</td>
+                                        <td>
+                                            <script>
+                                                document.write(wh)
+                                            </script>
+                                        </td>
+                                        <td>
+                                            <script>
+                                                document.write(ot)
+                                            </script>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+</div>
